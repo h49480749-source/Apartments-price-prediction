@@ -1,0 +1,22 @@
+services:
+  api:
+    image: apartments-fastapi
+    container_name: apartments-fastapi-container
+    restart: unless-stopped
+    build: 
+     context: .
+     dockerfile: Dockerfile
+    ports:  
+      - "8000:8000"
+
+  streamlit:
+    image: apartments-streamlit
+    container_name: apartments-streamlit-container
+    restart: unless-stopped
+    build: 
+     context: ./Streamlit
+     dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    depends_on:   
+      - api

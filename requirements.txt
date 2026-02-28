@@ -1,0 +1,17 @@
+requests
+beautifulsoup4
+lxml
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+xgboost
+joblib
+jupyter
+notebook
+fastapi
+uvicorn
+mlflow
+pytest
+streamlit
