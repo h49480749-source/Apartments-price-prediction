@@ -51,8 +51,8 @@ def modelling(data):
             mlflow.log_param("n_estimators", 40)
             
             mlflow.log_metric('r2_score', score)
-            mlflow.sklearn.log_model(sk_model=model, name="XGBoost_regression_model")
-        model.fit(X,y)
+            mlflow.sklearn.log_model(sk_model=model, artifact_path="XGBoost_regression_model")        
+            model.fit(X,y)
         joblib.dump(model, 'models/model.pkl')
         logger.info("Model building and saving completed successfully")
     except Exception as e:
