@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: streamlit
+  name: streamlit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: streamlit
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: streamlit
+    spec:
+      containers:
+      - image: h229/apatrments-price-prediction-ui:v1
+        name: apatrments-price-prediction-ui
+        ports:
+        - containerPort: 8501
+        resources: {}
+status: {}
